@@ -11,7 +11,6 @@
 import multiprocessing
 import os
 import sys
-import threading
 import time
 
 from multimechanize.script_loader import ScriptLoader
