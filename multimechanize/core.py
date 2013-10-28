@@ -11,7 +11,6 @@
 import multiprocessing
 import os
 import sys
-import threading
 import time
 
 from multimechanize.script_loader import ScriptLoader
@@ -72,10 +71,10 @@ class UserGroup(multiprocessing.Process):
 
 
 
-class Agent(threading.Thread):
+class Agent(multiprocessing.Process):
     def __init__(self, queue, process_num, thread_num, start_time, run_time,
                  user_group_name, script_module, script_file):
-        threading.Thread.__init__(self)
+        super(Agent, self).__init__()
         self.queue = queue
         self.process_num = process_num
         self.thread_num = thread_num
