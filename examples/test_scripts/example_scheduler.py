@@ -44,7 +44,7 @@ class Transaction(object):
 
     def run(self):
         self.scheduler.run()
-        self.custom_timers = self.rate_worker.custom_timers
+        self.custom_timers = self.scheduler.custom_timers
 
 
 class Scheduler(object):
